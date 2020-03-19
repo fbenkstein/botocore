@@ -479,6 +479,11 @@
       "members":{
       }
     },
+    "CatalogString":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
     "DatabaseString":{
       "type":"string",
       "max":255,
@@ -920,12 +925,16 @@
     "QueryExecutionContext":{
       "type":"structure",
       "members":{
+        "Catalog":{
+          "shape":"CatalogString",
+          "documentation":"<p>The name of the catalog.</p>"
+        },
         "Database":{
           "shape":"DatabaseString",
           "documentation":"<p>The name of the database.</p>"
         }
       },
-      "documentation":"<p>The database in which the query execution occurs.</p>"
+      "documentation":"<p>The database and data catalog context in which the query execution occurs.</p>"
     },
     "QueryExecutionId":{"type":"string"},
     "QueryExecutionIdList":{
